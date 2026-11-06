@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-10-27 15:14:10 +0800",
+  "data_source": "/data/lxy/hm_recsys/optimization/output/clean",
+  "transactions": 31788324,
+  "customers": 1371980,
+  "articles": 105542,
+  "submission_customers": 1371980,
+  "temporal": {
+    "date_min": "2018-09-20",
+    "date_max": "2020-09-22",
+    "daily_purchase_mean": 43308.34332425068,
+    "daily_purchase_max": 198622,
+    "daily_purchase_max_date": "2019-09-28",
+    "daily_revenue_mean": 1205.2397466632779,
+    "channel_purchase_share": {
+      "1": 29.6,
+      "2": 70.4
+    },
+    "elapsed_seconds": 42.534
+  },
+  "item": {
+    "active_articles": 104547,
+    "top10_purchase_share": 0.009090979442640637,
+    "top100_purchase_share": 0.04600906295028326,
+    "top1000_purchase_share": 0.18159831263831336,
+    "median_article_purchases": 65.0,
+    "price_mean": 0.027829273856993582,
+    "price_median": 0.0254067796610169,
+    "price_p05": 0.0076101694915254,
+    "price_p95": 0.0593050847457627,
+    "elapsed_seconds": 51.375
+  },
+  "behavior": {
+    "customers_with_transactions": 1362281,
+    "median_lifetime_purchases": 9.0,
+    "mean_lifetime_purchases": 23.334630667241193,
+    "median_active_days": 3.0,
+    "median_recency_days": 151.0,
+    "median_basket_items": 2.0,
+    "mean_basket_items": 3.500847725578978,
+    "median_visit_gap_days": 22.0,
+    "median_same_item_gap_days": 8.0,
+    "repeat_customer_article_pair_share": 0.04179292656944393,
+    "repeat_event_share": 0.044407295157249796,
+    "elapsed_seconds": 183.823
+  },
+  "profile": {
+    "unknown_age_share": 0.011560664149623172,
+    "unknown_club_status_share": 0.00441843175556495,
+    "unknown_news_frequency_share": 0.011669995189434249,
+    "highest_avg_purchase_age_group": "26-35",
+    "highest_avg_purchase_member_status": "ACTIVE",
+    "elapsed_seconds": 3.555
+  },
+  "window": {
+    "target_start": "2020-09-16",
+    "target_end": "2020-09-22",
+    "target_purchases": 240311,
+    "target_customers": 68984,
+    "target_articles": 17986,
+    "submission_customers_active_in_target": 0.050280616335515095,
+    "target_customers_with_prior_history": 0.9192276469906066,
+    "no_transaction_customer_share": 0.007069345034184216,
+    "best_top12_window_by_purchase_coverage": 7,
+    "elapsed_seconds": 62.675
+  },
+  "outputs": {
+    "figures": [
+      "01_daily_trend.png",
+      "02_monthly_channel_trend.png",
+      "03_day_of_week_pattern.png",
+      "04_article_long_tail.png",
+      "05_product_group_purchases.png",
+      "06_index_group_purchases.png",
+      "07_colour_group_purchases.png",
+      "08_product_group_channel_share.png",
+      "09_price_distribution.png",
+      "10_customer_activity_distribution.png",
+      "11_basket_analysis.png",
+      "12_purchase_gap_analysis.png",
+      "13_age_profile_analysis.png",
+      "14_member_and_news_profile.png",
+      "15_window_coverage_stability.png",
+      "16_customer_recency_distribution.png"
+    ],
+    "tables": [
+      "age_group_summary.csv",
+      "basket_size_summary.csv",
+      "club_member_summary.csv",
+      "colour_group_summary.csv",
+      "customer_activity_summary.csv",
+      "customer_recency_summary.csv",
+      "customer_transaction_stats.csv",
+      "daily_transaction_summary.csv",
+      "fashion_news_summary.csv",
+      "index_group_summary.csv",
+      "monthly_channel_purchases.csv",
+      "monthly_channel_ratio.csv",
+      "product_group_summary.csv",
+      "top500_articles.csv",
+      "window_popularity_and_coverage.csv"
+    ]
+  }
+}

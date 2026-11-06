@@ -1,0 +1,35 @@
+{
+  "verified_at": "2026-11-02T17:38:40.036582+08:00",
+  "model_notebook": "optimization/code/04_final_candidate_feature_model.ipynb",
+  "reused_inputs": "Existing cleaned data and mining artifacts; notebook 03 was not rerun.",
+  "independent_top12_metrics": {
+    "map@12": 0.038757945492993995,
+    "recall@12": 0.07566375556759065,
+    "hit_rate@12": 0.1449814126394052
+  },
+  "evaluated_users": 13719,
+  "predictions_unique_and_12_per_user": true,
+  "saved_model_predictions_match_saved_scores": true,
+  "candidate_pool_unique_and_at_most_100_per_user": true,
+  "feature_count": 31,
+  "regression_tests": "7 passed",
+  "historical_changelog_map": 0.038757945492994,
+  "map_difference_from_historical_changelog": -6.938893903907228e-18,
+  "sha256": {
+    "optimization/code/04_final_candidate_feature_model.ipynb": "0e5c75045f2559e5a9547a5a2b77b295b11854e0322bae56ccd9c3036db798bd",
+    "optimization/requirements.txt": "54e79143fda03d0f81e19a185301cdd53075f6d95762585a8d79f0ace8110fe9",
+    "optimization/output/clean/articles_clean.parquet": "540e8630b228ac4bfdfa11b672fc89718e2f957df5386b3856426ed6e3a75cc8",
+    "optimization/output/clean/customers_clean.parquet": "c5cfbe80a7544a7285b78c9987111507bfd3c1a7b5b9012584d02c40d902556e",
+    "optimization/output/clean/submission_customers.parquet": "52492372fea4258f03b11ae85974c798fec03824642365ded831c1d98f5528c7",
+    "optimization/output/clean/transactions_clean.parquet": "fb38da923bd576ae4b43ca5ae8d37f02ffb935f4e2c11c798216faba55ce996d",
+    "optimization/output/mining/association_rules_same_day.parquet": "67c09fb0c812f0b5780cd4b345650306daa00ae77703b16ffcc93b64aed1deff",
+    "optimization/output/mining/item_cf_neighbors.parquet": "a2603070c0f532b8853b1eaccf44245428f79a257b17ca159c698f2155fc94ca",
+    "optimization/output/mining/customer_mining_profile.parquet": "967e608966dfdb4243a732c6f98c7821c66225e0e6a36398f34f711c51cda24f",
+    "optimization/output/mining/segment_popularity_top50.parquet": "f42bb6a3b4df6596806f5aa9295a13cf3970e50397d143bab722f0b6a592e798",
+    "optimization/output/mining/customer_price_preferences.parquet": "f1b04dcf9d900b3e3808329e0f1ac5b1b8b1b4da1f65590008d017427504d5e9",
+    "optimization/output/modeling/final_model/lightgbm_lambdarank_final.txt": "9cff0a3aa930dfd314c1272b83c66a3468778294b2e453a2d2279afabcb5b834",
+    "optimization/output/modeling/final_model/final_model_valid_top12.parquet": "7193da36a0c5bf299da96f43aa117877b5e03e1db7678d1468e298ddf66e84dc",
+    "optimization/output/modeling/final_model/final_features.csv": "f8e0e1a1072293a7fc28b840edc6d712355edb2f03bd9fb2bcff0d8622886951",
+    "optimization/output/modeling/final_model/final_model_summary.json": "01d2ecb9974db4ddff7afb32de9a831366ea52e53e1a7070ea8e05b5a4da49c0"
+  }
+}

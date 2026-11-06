@@ -1,0 +1,246 @@
+04_final_candidate_feature_model.ipynb cell 1 started
+transactions: (31788324, 6)
+history: (31548013, 6) 2018-09-20 2020-09-15
+target: (240311, 6) 2020-09-16 2020-09-22
+target users: 68984 target pairs: 213728
+LightGBM: 4.7.0
+
+cell 1 finished in 35.4s
+04_final_candidate_feature_model.ipynb cell 3 started
+{"channel": "baseline1_recency", "map@12": 0.025135722147123254, "recall@12": 0.05044457806294796, "hit_rate@12": 0.10112489852719471, "covered_users": 68984, "evaluated_users": 68984}
+{"channel": "baseline1_recency_valid", "map@12": 0.027734496179554247, "recall@12": 0.05306096089509892, "hit_rate@12": 0.10263138712734164, "covered_users": 13719, "evaluated_users": 13719}
+{"channel": "baseline2_co_purchase", "map@12": 0.022838636177194508, "recall@12": 0.04890996520730041, "hit_rate@12": 0.09854459004986664, "covered_users": 68984, "evaluated_users": 68984}
+{"channel": "baseline2_co_purchase_valid", "map@12": 0.02491353313299502, "recall@12": 0.05071239318430279, "hit_rate@12": 0.09774764924557183, "covered_users": 13719, "evaluated_users": 13719}
+{
+  "baseline1_full_map@12": 0.025135722147123254,
+  "baseline1_valid_map@12": 0.027734496179554247,
+  "baseline2_full_map@12": 0.022838636177194508,
+  "baseline2_valid_map@12": 0.02491353313299502,
+  "train_users": 55265,
+  "valid_users": 13719,
+  "elapsed_seconds": 9.424
+}
+
+cell 3 finished in 9.4s
+04_final_candidate_feature_model.ipynb cell 5 started
+{
+  "pool_rows": 6047766,
+  "pool_users": 68984,
+  "candidate_count_mean": 87.66911167807028,
+  "candidate_count_median": 100.0,
+  "candidate_count_p05": 48.0,
+  "candidate_count_p95": 100.0,
+  "positive_candidates": 21913,
+  "target_pairs": 213728,
+  "pool_recall@100": 0.12424358267917754,
+  "channel": "candidate_pool_recall@100",
+  "map@100": 0.023491331127934417,
+  "recall@100": 0.12424358267917754,
+  "hit_rate@100": 0.24601356836367855,
+  "covered_users": 68984,
+  "evaluated_users": 68984,
+  "source_channel_rows": {
+    "repurchase": 2040991,
+    "same_day_association": 1009716,
+    "implicit_cf": 817263,
+    "age_popularity": 2043394,
+    "global_popularity": 2050934
+  },
+  "elapsed_seconds": 151.82
+}
+
+cell 5 finished in 151.8s
+04_final_candidate_feature_model.ipynb cell 7 started
+{
+  "rows": 6047766,
+  "users": 68984,
+  "articles": 76419,
+  "numeric_features": 26,
+  "categorical_features": 5,
+  "total_features": 31,
+  "positive_rows": 21913,
+  "positive_rate": 0.003623321404961766,
+  "elapsed_seconds": 131.877
+}
+
+cell 7 finished in 131.9s
+04_final_candidate_feature_model.ipynb cell 9 started
+{"channel": "lightgbm_lambdarank_final_valid", "map@12": 0.038757945492993995, "recall@12": 0.07566375556759065, "hit_rate@12": 0.1449814126394052, "covered_users": 13719, "evaluated_users": 13719}
+                        channel   map@12  recall@12  hit_rate@12  covered_users  evaluated_users  valid_candidate_auc  best_iteration  elapsed_seconds  map_gain_vs_baseline1  map_gain_vs_baseline2
+        baseline1_recency_valid 0.027734   0.053061     0.102631          13719            13719                  NaN             NaN              NaN               0.000000               0.113230
+    baseline2_co_purchase_valid 0.024914   0.050712     0.097748          13719            13719                  NaN             NaN              NaN              -0.101713               0.000000
+lightgbm_lambdarank_final_valid 0.038758   0.075664     0.144981          13719            13719             0.822039           226.0          201.647               0.397463               0.555698
+{
+  "generated_at": "2026-11-02 17:36:17 +0800",
+  "status": "final",
+  "model": "LightGBM LambdaRank",
+  "recall_channels": [
+    "repurchase",
+    "same_day_association",
+    "implicit_cf",
+    "age_popularity",
+    "global_popularity"
+  ],
+  "feature_count": 31,
+  "candidate_rows": 6047766,
+  "target_period": [
+    "2020-09-16",
+    "2020-09-22"
+  ],
+  "evaluation_protocol": "80/20 customer-key split; validation users are absent from training; the same validation users are used for early stopping and reported metrics",
+  "split_users": {
+    "train": 55265,
+    "valid": 13719
+  },
+  "parameters": {
+    "objective": "lambdarank",
+    "metric": "ndcg",
+    "ndcg_eval_at": [
+      12
+    ],
+    "lambdarank_truncation_level": 12,
+    "label_gain": [
+      0,
+      1
+    ],
+    "learning_rate": 0.03,
+    "num_leaves": 63,
+    "min_data_in_leaf": 100,
+    "feature_fraction": 0.85,
+    "bagging_fraction": 0.9,
+    "bagging_freq": 1,
+    "lambda_l1": 0.5,
+    "lambda_l2": 5.0,
+    "num_threads": 4,
+    "verbosity": -1,
+    "seed": 2026
+  },
+  "objective": "lambdarank",
+  "baselines": [
+    {
+      "channel": "baseline1_recency_valid",
+      "map@12": 0.027734496179554247,
+      "recall@12": 0.05306096089509892,
+      "hit_rate@12": 0.10263138712734164,
+      "covered_users": 13719,
+      "evaluated_users": 13719,
+      "valid_candidate_auc": NaN,
+      "best_iteration": NaN,
+      "elapsed_seconds": NaN,
+      "map_gain_vs_baseline1": 0.0,
+      "map_gain_vs_baseline2": 0.11323014810866772
+    },
+    {
+      "channel": "baseline2_co_purchase_valid",
+      "map@12": 0.02491353313299502,
+      "recall@12": 0.05071239318430279,
+      "hit_rate@12": 0.09774764924557183,
+      "covered_users": 13719,
+      "evaluated_users": 13719,
+      "valid_candidate_auc": NaN,
+      "best_iteration": NaN,
+      "elapsed_seconds": NaN,
+      "map_gain_vs_baseline1": -0.10171315275735315,
+      "map_gain_vs_baseline2": 0.0
+    }
+  ],
+  "final_model": {
+    "channel": "lightgbm_lambdarank_final_valid",
+    "map@12": 0.038757945492993995,
+    "recall@12": 0.07566375556759065,
+    "hit_rate@12": 0.1449814126394052,
+    "covered_users": 13719,
+    "evaluated_users": 13719,
+    "valid_candidate_auc": 0.8220387161182225,
+    "best_iteration": 226,
+    "elapsed_seconds": 201.647
+  },
+  "candidate_pool": {
+    "pool_rows": 6047766,
+    "pool_users": 68984,
+    "candidate_count_mean": 87.66911167807028,
+    "candidate_count_median": 100.0,
+    "candidate_count_p05": 48.0,
+    "candidate_count_p95": 100.0,
+    "positive_candidates": 21913,
+    "target_pairs": 213728,
+    "pool_recall@100": 0.12424358267917754,
+    "channel": "candidate_pool_recall@100",
+    "map@100": 0.023491331127934417,
+    "recall@100": 0.12424358267917754,
+    "hit_rate@100": 0.24601356836367855,
+    "covered_users": 68984,
+    "evaluated_users": 68984,
+    "source_channel_rows": {
+      "repurchase": 2040991,
+      "same_day_association": 1009716,
+      "implicit_cf": 817263,
+      "age_popularity": 2043394,
+      "global_popularity": 2050934
+    },
+    "elapsed_seconds": 151.82
+  },
+  "features": {
+    "rows": 6047766,
+    "users": 68984,
+    "articles": 76419,
+    "numeric_features": 26,
+    "categorical_features": 5,
+    "total_features": 31,
+    "positive_rows": 21913,
+    "positive_rate": 0.003623321404961766,
+    "elapsed_seconds": 131.877
+  },
+  "comparison": [
+    {
+      "channel": "baseline1_recency_valid",
+      "map@12": 0.027734496179554247,
+      "recall@12": 0.05306096089509892,
+      "hit_rate@12": 0.10263138712734164,
+      "covered_users": 13719,
+      "evaluated_users": 13719,
+      "valid_candidate_auc": NaN,
+      "best_iteration": NaN,
+      "elapsed_seconds": NaN,
+      "map_gain_vs_baseline1": 0.0,
+      "map_gain_vs_baseline2": 0.11323014810866772
+    },
+    {
+      "channel": "baseline2_co_purchase_valid",
+      "map@12": 0.02491353313299502,
+      "recall@12": 0.05071239318430279,
+      "hit_rate@12": 0.09774764924557183,
+      "covered_users": 13719,
+      "evaluated_users": 13719,
+      "valid_candidate_auc": NaN,
+      "best_iteration": NaN,
+      "elapsed_seconds": NaN,
+      "map_gain_vs_baseline1": -0.10171315275735315,
+      "map_gain_vs_baseline2": 0.0
+    },
+    {
+      "channel": "lightgbm_lambdarank_final_valid",
+      "map@12": 0.038757945492993995,
+      "recall@12": 0.07566375556759065,
+      "hit_rate@12": 0.1449814126394052,
+      "covered_users": 13719,
+      "evaluated_users": 13719,
+      "valid_candidate_auc": 0.8220387161182225,
+      "best_iteration": 226.0,
+      "elapsed_seconds": 201.647,
+      "map_gain_vs_baseline1": 0.3974634780481856,
+      "map_gain_vs_baseline2": 0.5556984746440357
+    }
+  ],
+  "outputs": {
+    "candidate_pool": "/data/lxy/hm_recsys/optimization/output/modeling/final_model/candidate_pool_top100.parquet",
+    "candidate_sources": "/data/lxy/hm_recsys/optimization/output/modeling/final_model/candidate_sources.parquet",
+    "ranking_dataset": "/data/lxy/hm_recsys/optimization/output/modeling/final_model/ranking_dataset.parquet",
+    "features": "/data/lxy/hm_recsys/optimization/output/modeling/final_model/final_features.csv",
+    "model": "/data/lxy/hm_recsys/optimization/output/modeling/final_model/lightgbm_lambdarank_final.txt",
+    "evaluation": "/data/lxy/hm_recsys/optimization/output/modeling/final_model/tables/final_model_vs_baselines.csv",
+    "figure": "/data/lxy/hm_recsys/optimization/output/modeling/final_model/figures/final_model_summary.png"
+  }
+}
+
+cell 9 finished in 204.8s

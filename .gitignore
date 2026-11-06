@@ -1,0 +1,11 @@
+# 1. 明确排除整个 data 目录
+data/
+
+# 2. 排除优化输出中的超限大文件及 parquet 缓存
+optimization/output/**/*.parquet
+*.parquet
+
+# 3. 常见 Python/Jupyter 缓存
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
